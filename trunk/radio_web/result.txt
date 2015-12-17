@@ -1,0 +1,102 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Radio web 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/webtjenester_business/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/webtjenester_business/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/webtjenester_business/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/webtjenester_business/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/rammeverk/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/rammeverk/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/rammeverk/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/rammeverk/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: file://C:/Users/oluf/.m2/repository/opensymphony/quartz/1.6.0/quartz-1.6.0.pom
+Downloading: http://maven.restlet.org/opensymphony/quartz/1.6.0/quartz-1.6.0.pom
+[WARNING] The POM for opensymphony:quartz:jar:1.6.0 is missing, no dependency information available
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/webtjenestetest/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/webtjenestetest/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/webtjenestetest/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/webtjenestetest/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/basis/basis_felles/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/basis/basis_felles/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/basis/basis_felles/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/basis/basis_felles/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/rammeverk_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/rammeverk_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/rammeverk_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/rammeverk_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/hive-core/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/hive-core/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/hive-core/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/hive-core/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/semantiskweb_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/semantiskweb_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/semantiskweb_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/semantiskweb_web/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/elmo-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/elmo-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/elmo-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/elmo-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/elmo-dc-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/elmo-dc-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/elmo-dc-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/elmo-dc-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/elmo-foaf-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/elmo-foaf-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/elmo-foaf-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/elmo-foaf-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/elmo-rdfs-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/elmo-rdfs-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/elmo-rdfs-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/elmo-rdfs-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/elmo-skos-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/elmo-skos-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/elmo-skos-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/elmo-skos-1.5/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.jboss.org/nexus/content/groups/public/no/kunnskapssenteret/openrdf-sesame-2.4.0-onejar/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://repository.jboss.org/no/kunnskapssenteret/openrdf-sesame-2.4.0-onejar/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/1/no/kunnskapssenteret/openrdf-sesame-2.4.0-onejar/1.0-SNAPSHOT/maven-metadata.xml
+Downloading: http://download.java.net/maven/2/no/kunnskapssenteret/openrdf-sesame-2.4.0-onejar/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ radio_web ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ radio_web ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 19 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ radio_web ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 18 source files to C:\svnroot\dev\radio\trunk\radio_web\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ radio_web ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\svnroot\dev\radio\trunk\radio_web\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ radio_web ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ radio_web ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ radio_web ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [radio_web] in [C:\svnroot\dev\radio\trunk\radio_web\target\radio_web]
+[INFO] Processing war project
+[INFO] Copying webapp resources [C:\svnroot\dev\radio\trunk\radio_web\src\main\webapp]
+[INFO] Webapp assembled in [7053 msecs]
+[INFO] Building war: C:\svnroot\dev\radio\trunk\radio_web\target\radio_web.war
+[INFO] WEB-INF\web.xml already added, skipping
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ radio_web ---
+[INFO] Installing C:\svnroot\dev\radio\trunk\radio_web\target\radio_web.war to C:\Users\oluf\.m2\repository\no\acem\radio_web\1.0-SNAPSHOT\radio_web-1.0-SNAPSHOT.war
+[INFO] Installing C:\svnroot\dev\radio\trunk\radio_web\pom.xml to C:\Users\oluf\.m2\repository\no\acem\radio_web\1.0-SNAPSHOT\radio_web-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 49.682 s
+[INFO] Finished at: 2015-11-21T16:21:19+01:00
+[INFO] Final Memory: 36M/154M
+[INFO] ------------------------------------------------------------------------
