@@ -87,12 +87,12 @@ public class RapporterRadioStartServerResourceHTML extends SessionServerResource
 //		 SimpleScalar pwd = new SimpleScalar(passordCheck);
 //		 dataModel.put(displayPassord,pwd);
 	     LocalReference pakke = LocalReference.createClapReference(LocalReference.CLAP_CLASS,
-                 "/basis");
+                 "/radio");
 	    
 	     LocalReference localUri = new LocalReference(reference);
 	
 // Denne client resource forholder seg til src/main/resource katalogen !!!	
-	     ClientResource clres2 = new ClientResource(LocalReference.createClapReference(LocalReference.CLAP_CLASS,"/basis/startside.html"));
+	     ClientResource clres2 = new ClientResource(LocalReference.createClapReference(LocalReference.CLAP_CLASS,"/radio/startside.html"));
 
 	        Representation pasientkomplikasjonFtl = clres2.get();
 
