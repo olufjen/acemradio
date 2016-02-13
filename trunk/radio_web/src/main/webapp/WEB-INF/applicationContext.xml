@@ -107,10 +107,13 @@
         </property> 
   -->       
 	</bean>
+	<bean id="sessionAdmin" class="no.basis.felles.control.SessionAdminImpl">
+    </bean>
   <bean name="/radio/startside.html" id="rapporterRadiostartServerResource" autowire="byName" scope="prototype"
             class="no.radio.web.server.resource.RapporterRadioStartServerResourceHTML">
   </bean>
     <bean name="/radio/" id="startRadioServerResource" autowire="byName" scope="prototype"
             class="no.radio.web.server.resource.RapporterRadioStartServerResourceHTML">
+     <property name="sessionAdmin" ref="sessionAdmin"></property>
   </bean>
 </beans>

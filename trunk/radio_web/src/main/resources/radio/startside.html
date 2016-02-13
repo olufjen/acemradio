@@ -1,128 +1,254 @@
 <html>
 <head>
 
-  <title>En start side for Acem radio</title>
-  <meta charset="utf-8">
+  <title>Rapporter hendelse - Hemovigilans</title>
+    <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html;">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta content="En forside. " name="description">
-    <link href="/radio_web/resources/css/main.css" rel="stylesheet">
+  <meta content="Kunnskapssenteret oppsummerer forskning om effekt av helsetiltak, gjør helseøkonomiske analyser, måler kvalitet, og arbeider med kvalitetsforbedring og pasientsikkerhet. " name="description">
+
+  <link href="/radio_web/resources/css/main.css" rel="stylesheet">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link href="/radio_web/resources/css/biovigilans.css" rel="stylesheet">
   
  
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" /><!-- Viktig for dato !! -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> <!-- Viktig for dato !! -->
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" ></script>
-
-
-
 </head>
 
-<body>
- <header>
-    <div class="container">
-      <div class="left hidden-print">        
-        <button type="button" class="btn btn-default btn-lg" onclick="homePage()">Tilbake</button>        
+<body >
+ <header class="master-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-9 col-sm-6 col-sm-push-3 col-vertical-bottom-sm logo-container">
+            <div class="bottom">
+              <a class="home" href="#" id="home" rel="home" title="">
+                <img class="logo" src="/radio_web/resources/css/firmalogo.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="hidden-xs col-sm-3 col-sm-push-5 col-vertical-bottom-sm">
+       
+          </div>
+          <div class="col-xs-3 col-sm-pull-9 col-vertical-bottom-sm">
+            <div class="bottom">
+				<button type="button" onclick="homePage()" class="btn btn-default btn-lg">Tilbake</button>
+			</div>
+          </div>
+        </div>
       </div>
-      <figure title="Version 1.1 J8 November 2015" class="main-logo">        
-        <img alt="Logo Basis" src="/radio_web/resources/css/logo.gif">        
-      </figure>
-    </div>    
-  </header>
-
-
-<div class="container">
-   <ul class="pager">
-    <li class="previous" title="Du er ved startsiden. Her velger du ny melding eller oppfølgingsmelding "><a href="#"><strong><span style="color:black">Start</span></strong></a></li>
-    <li class="previous" title="Her velger du noe annet "><a href="#">Noe annet</a></li>
- 
-  </ul> 
-  
-<form action="?method=PUT" method="post">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript">
-var blurCount = 0;
-function homePage(){
-	var curAddr = document.location.href;
-//	 alert(curAddr);
-	var newAddr = curAddr.replace("startside.html","");
-//	alert(newAddr);
-	document.location = newAddr;
-
-}
-function toggleDisplay(id, displayvalue)
-{    
-//	 alert("step 1 "+displayvalue);
-    if ( displayvalue == 1 ) {
-         document.getElementById(id).style.display = 'block';
-//         alert("step 2");
-    } else if (displayvalue == 0) {
-         document.getElementById(id).style.display = 'none';
-    //     alert("step 3");
-    }
- //   alert("step 4");
-}
-
-function meldingsnokkel(){
-	blurCount = blurCount + 1;
-	alert("nøkkel"+blurCount);
-    if (blurCount <= 1){
-    	$("#btnnokkel").click();
-    } 
+    </header>
+	<div class="container">
+		<script type="text/javascript">
 	
-}
-</script>
+			/**
+			This  function set the calender for date to the browsers those doesn't support html5 input type date.
+			
+			*/
+			var initDatepicker = function() {
+				  $('input[type=date]').each(function() {
+			        var $input = $(this);
+			        $input.datepicker({
+			        	
+			        	 dateFormat: 'yy-dd-mm',
+			        });
+			    });
+			};
+			if(!Modernizr.inputtypes.date){
+				$(document).ready(initDatepicker);
+			};
+		
+		
 
-<h2>Startside Acem radio</h2>
-  
- <div id="levert" class="form-group">
-        <label></label>
- 
- </div>
+		 function homePage(){
+				var curAddr = document.location.href;
+//				 alert(curAddr);
+				var newAddr = curAddr.replace("rapporter_andrehendelser.html","");
+//				alert(newAddr);
+				document.location = newAddr;
 
-      <div class="radio">
-          <label>
-            <input name="k-nyperiode" type="radio" id="k-nyperiode" value="ny-periode" title="Lager ny periode for sendinger" onclick="toggleDisplay('passord-div',0);document.location='rapporter_hendelse_main.html';" />
-            Lage ny periode
-          </label>
-      </div>
-      <div class="radio">
-          <label>
-            <input name="k-nymelding" type="radio" id="k-oppfolging" value="oppfølgningsmelding" onclick="toggleDisplay('passord-div',this.checked);toggleDisplay('nyttpassord',1)"/>
-            Et valg med pålogging
-          </label>
-        <div class="form-group" id="passord-div" style="display:none">
-        <label for="k-epost">E-post:</label>
-        <div>
-          <input name="k-melderepost" type="text" class="form-control" id="k-meldingsnokkel" placeholder="Melders epost" >
-        </div><br />
-        <label for="k-passord">Passord:</label>
-        <div>
-          <input name="k-melderpassord" type="password" class="form-control" id="k-meldingsnokkel" placeholder="Melders passord" onblur="meldingsnokkel();">
-        </div><br />       
-      </div>
-      </div>
- 
-  
+			}
+				function toggleDisplay(id)
+				{    
+					document.getElementById('smitte').style.display = 'none';
+					document.getElementById('feilblod').style.display = 'none';
+					document.getElementById('intervju').style.display = 'none';
+					document.getElementById('giveren').style.display = 'none';
+					document.getElementById('utstyr').style.display = 'none';
+					document.getElementById('analyser').style.display = 'none';
+					document.getElementById('merking').style.display = 'none';
+					document.getElementById('giver').style.display = 'none';
+					document.getElementById('transport').style.display = 'none';
+					document.getElementById('merking').style.display = 'none';
+					document.getElementById('annet').style.display = 'none';
+					
+					document.getElementById(id).style.display = 'block';
+					
+					if(id !='feilblod'){
+						$("input:checkbox[name='tab-hvagikkgalt']").each(function(i) {
+						       this.checked = false;
+						});
+					}
+				    
+				}
+				function setRequired(elementName){
+					document.getElementsByTagName(elementName)[0].setAttribute("required", "required");
+				}
+				function resetRequired(elementName){
+					document.getElementsByTagName(elementName)[0].removeAttribute("required");
+				}				
+				/** this funciton unceked all sub radio and checkbox buttons before to select new one */
+				function checkUncheck() {
+					$("input:radio[name='tab-klassifikasjon-sub']").each(function(i) {
+					       this.checked = false;
+					});
+				}
+				
+				/** when form is not godkjent and comeback to this form
+				    this function click the radio buttons of klassifikasjon and delkode   */
+				/* function checkRadiobutton(klassifikasjon,delkode){
+					var radiosKlassifikasjon = document.getElementsByName("tab-klassifikasjon" );
+					var size =  radiosKlassifikasjon.length;
+					for(var j=1; j<size+1;j++){
+						var radioValue =$("#k-"+j).val();
+						 if(klassifikasjon == radioValue){
+							 $("#k-"+j).prop( "checked", true );
+							 $("#k-"+j).trigger("click");
+							 break;
+						 }
+					 }
+					var radioDelkode = document.getElementsByName("tab-klassifikasjon-sub" );
+					var sizeDelkode = radioDelkode.length;
+					for(var i=1; i<sizeDelkode; i++){
+						var radioValue =$("#"+i).val();
+						if(delkode == radioValue){
+							 $("#"+i).prop("checked", true );
+							 break;
+						 }
+					}
+				}	 */
 
-<div class="panel-group" id="accordion">
+				function validateForm() {
+					if (reqFlag == 'none'){ // Benyttes ikke ved oppfølgingsmeldinger !
+					var elementNames = ["beskrivelse","tab-prosess","tab-kvalitetskrav","tab-hendelse","hendelseoppdaget","planlagtetiltak"];
+					for (i = 0; i < elementNames.length; i++ )	{
+						var elementName = elementNames[i];
+					    var x = document.forms["rapport"][elementName].value;
+					    if (x == null || x == "") {
+					        alert("Feltet "+elementName+" mangler verdi. Vennligst velg Ikke godkjent!");
+					        return false;
+					    }						
+					}
+					}
+					return false;
+				}
+				function sendInn(val){
+					if(val=="sendinn"){
+						var btnValue = $("#btnSendinn").val();
+						if(btnValue=="sendinn"){
+							$("input[type=radio]").attr('disabled', true);
+							$("input[type=checkbox]").attr('disabled', true);
+							$('div').find('input, textarea, select').attr('readonly', true);
+							$('div').find('select').attr('disabled', true);	
+							
+							$("#sendinnTxt").html('Godkjenn og gå til kontaktopplysninger');
+							$("#avbrytTxt").html('Ikke godkjent');
+							$("#btnAvbryt").val('ikkeGodkjent');
+							$("#btnSendinn").val('godkjent');
+							return false;
+						}else if(btnValue == "godkjent"){
+							$("input[type=radio]").attr('disabled', false);
+							$("input[type=checkbox]").attr('disabled', false);
+							$('div').find('input, textarea, select').attr('readonly', false);
+							$('div').find('select').attr('disabled', false);
+								
+							return true;
+						}
+					}else if(val=="avbryt"){
+						var btnValue = $("#btnAvbryt").val();
+						if( btnValue=="ikkeGodkjent" ){
+							$("input[type=radio]").attr('disabled', false);
+							$("input[type=checkbox]").attr('disabled', false);
+							$('div').find('input, textarea, select').attr('readonly', false);
+							$('div').find('select').attr('disabled', false);
+							
+							$("#sendinnTxt").html('Kontroll før innsending');
+							$("#avbrytTxt").html('Avbryt');
+							$("#btnAvbryt").val('avbryt');
+							$("#btnSendinn").val('sendinn');
+							
+							return false;
+						}else{
+							var url = "rapporter_hendelse_main.html";
+							$(location).attr('href',url);
+							return false;
+						}
+					}
+				}
+			      function formSubmit(button){
+			        	var clickbutton = "#"+button;
+			        //	alert("FÃ¸r clicked");
+			        //	$("#valgt").click();
+			        	$(clickbutton).click();
+			        //	alert("clicked");
 
-</div>
-		  <button type="submit" id="btnnokkel" value="nokkel"  name="formValue" class="btn btn-primary" style="display: none" > getValue </button>
-          <button name="nyttpassord" type="submit" id="nyttpassord" class="btn btn-primary" style="display: none" >Glemt passord?</button>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<!--<script src="js/bootstrap.min.js"></script>-->
-</form>
-</div> <!--slutt container-->
+			    	}
+			</script>
+<form id="rapport" name="rapport" action="?method=PUT" method="post"  > 
+	
+			<!-- Nav tabs
+			<ul class="nav nav-tabs">
+			  <li ><a href="rapporter_hendelse_main.html" data-toggle="tab">Meld fra om</a></li>
+			  <li><a href="rapporter_kontakt.html" data-toggle="tab">Kontaktinformasjon</a></li>
+			  <li class="active"><a href="#andrehendelser" data-toggle="tab">Rapporter Andre-hendelser</a></li>
+			</ul>
+		 -->	
+   <div class="page-header">
+        <h2>Acem radio sendeplaner</h2><span class="pull-right label label-default"></span></h1>
+   </div>
+    <div class="row">
+    	<div class="col-md-6">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Nye sendeplaner</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Oversikt tidligere sendinger</a></li>
+                         
+                            
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1default">
+                        <div class="form-group" ">
+							<label>Startdato </label><br>
+							<input title="Siste dato satt i translist" type="date"  name="start-date" id="start-date" value="${startdato?date}" />
+						</div>
+						 <div class="form-group" ">
+							<label>Sluttdato</label><br>
+							<input title="Ny siste dato i translist" type="date"  name="slutt-date" id="slutt-date" value="${sluttdato?date}" onchange="formSubmit('btndatoslutt');" />
+						</div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                       Oversikt tidligere sendinger
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+          <button type="submit" id="btndatoslutt" value="datohendt"  name="datohendt" class="btn btn-primary" style="display: none" > getValue </button>
+        
+		</form>
+	</div>	
 </body>
 </html>

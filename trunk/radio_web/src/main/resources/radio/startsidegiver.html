@@ -1,0 +1,139 @@
+<html>
+<head>
+
+  <title>Rapporter hendelse - Hemovigilans</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta content="Kunnskapssenteret oppsummerer forskning om effekt av helsetiltak, gjør helseøkonomiske analyser, måler kvalitet, og arbeider med kvalitetsforbedring og pasientsikkerhet. " name="description">
+
+    <link href="/radio_web/resources/css/main.css" rel="stylesheet">
+    <link href="/radio_web/resources/css/biovigilans.css" rel="stylesheet"> 
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" ></script>
+	<script type="text/javascript" src="scripts/hendelser.js"></script>
+
+	<!--<link rel="stylesheet" href="css/bootstrap.css">-->
+</head>
+<body>
+ <header class="master-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-9 col-sm-6 col-sm-push-3 col-vertical-bottom-sm logo-container">
+            <div class="bottom">
+              <a class="home" href="#" id="home" rel="home" title="">
+                <img class="logo" src="/radio_web/resources/css/logo.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="hidden-xs col-sm-3 col-sm-push-5 col-vertical-bottom-sm">
+       
+          </div>
+          <div class="col-xs-3 col-sm-pull-9 col-vertical-bottom-sm">
+            <div class="bottom">
+        <button type="button" onclick="homePage()" class="btn btn-default btn-lg">Tilbake</button>
+      </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<div class="container">
+     
+    
+ 
+<script type="text/javascript">
+
+		
+	/**
+		This  function set the calender for date to the browsers those doesn't support html5 input type date.
+		
+	*/
+
+	var initDatepicker = function() {
+		  $('input[type=date]').each(function() {
+	        var $input = $(this);
+	        var id = $(this).attr('id')
+	      	var min="";
+	  	  alert("datepicker x "+id);
+	        if(id=="dato-hendelse"){
+	        	min = $("#dato-donasjon").val();
+	        	$("#dato-hendelse").datepicker('option', 'minDate', min);
+	        	 alert("date datohendelse "+id);
+	        }
+	        alert("datepicker før datepicker "+id);
+	        $(this).datepicker();
+	        alert("datepicker end "+id);
+	    });
+	};
+	
+	if(!Modernizr.inputtypes.date){
+		$(document).ready(initDatepicker);
+	};
+	
+
+	 function dateValidation(){
+	   var dateDonasjon = $("#dato-donasjon").val();
+	   if(!Modernizr.inputtypes.date){
+		 	$(document).ready(initDatepicker);
+		};
+	   $('#dato-hendelse').attr('min', dateDonasjon);
+	 }
+	
+	
+	</script>
+	<h1>Rapporter Giver Hemovigilans</h1>
+<form action="?method=PUT" method="post">
+   <div class="page-header">
+        <h2>Acem radio sendeplaner</h2><span class="pull-right label label-default"></span></h1>
+   </div>
+    <div class="row">
+    	<div class="col-md-6">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Nye sendeplaner</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Oversikt tidligere sendinger</a></li>
+                         
+                            
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1default">
+                        <div class="form-group" ">
+							<label>Startdato</label><br>
+							<input type="date"  name="start-date" id="start-date" />
+						</div>
+						 <div class="form-group" ">
+							<label>Sluttdato</label><br>
+							<input type="date"  name="slutt-date" id="slutt-date" />
+						</div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                       Oversikt tidligere sendinger
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
+</form>
+	
+</div>
+
+
+	  
+</body>
+</html>

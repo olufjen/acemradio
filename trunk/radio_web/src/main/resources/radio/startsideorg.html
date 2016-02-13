@@ -1,0 +1,158 @@
+<html>
+<head>
+
+  <title>En start side for Acem radio</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html;">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta content="En forside. " name="description">
+    <link href="/radio_web/resources/css/main.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link href="/radio_web/resources/css/biovigilans.css" rel="stylesheet">
+ 
+ 
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" /><!-- Viktig for dato !! -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> <!-- Viktig for dato !! -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" ></script>
+<!--      <script type="text/javascript" src="jquery-ui-1.10.3/ui/jquery.ui.datepicker.js"></script>
+ -->    
+
+
+
+</head>
+
+<body>
+ <header>
+    <div class="container">
+      <div class="left hidden-print">        
+        <button type="button" class="btn btn-default btn-lg" onclick="homePage()">Tilbake</button>        
+      </div>
+      <figure title="Version 1.1 J8 November 2015" class="main-logo">        
+        <img alt="Logo Basis" src="/radio_web/resources/css/firmalogo.jpg">        
+      </figure>
+    </div>    
+  </header>
+
+
+<div class="container">
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+var blurCount = 0;
+// alert("datepicker alt1");
+    jQuery(function($){ //on document.ready
+    	 alert("datepicker alt1 a");
+        $("#start-date").datepicker({
+       	 maxDate: "0",
+    	 dateFormat: 'yy-mm-dd'
+    });
+        alert("datepicker alt1 x");
+    });
+
+
+/**
+This  function set the calender for date to the browsers those doesn't support html5 input type date.
+
+*/
+var initDatepicker = function() {
+	 alert("datepicker");
+	 $('#start-date').datepicker({
+    	 maxDate: "0",
+    	 dateFormat: 'yy-mm-dd'
+    });
+	  $('input[type=date]').each(function() {
+		  alert("datepicker x ");
+        var $input = $(this);
+//        alert("datepicker 1 "+$input);
+        $input.datepicker({
+       	 maxDate: "0",
+    	 dateFormat: 'yy-mm-dd',
+    });
+       
+    });
+};
+if(!Modernizr.inputtypes.date){
+	alert("Modernizer");
+	$(document).ready(initDatepicker);
+};
+function homePage(){
+	var curAddr = document.location.href;
+	 alert(curAddr);
+	var newAddr = curAddr.replace("startside.html","");
+	alert(newAddr);
+	document.location = newAddr;
+
+}
+function toggleDisplay(id, displayvalue)
+{    
+//	 alert("step 1 "+displayvalue);
+    if ( displayvalue == 1 ) {
+         document.getElementById(id).style.display = 'block';
+//         alert("step 2");
+    } else if (displayvalue == 0) {
+         document.getElementById(id).style.display = 'none';
+    //     alert("step 3");
+    }
+ //   alert("step 4");
+}
+
+function meldingsnokkel(){
+	blurCount = blurCount + 1;
+	alert("nøkkel"+blurCount);
+    if (blurCount <= 1){
+    	$("#btnnokkel").click();
+    } 
+	
+}
+</script>
+
+<form action="?method=PUT" method="post">
+   <div class="page-header">
+        <h2>Acem radio sendeplaner</h2><span class="pull-right label label-default"></span></h1>
+   </div>
+    <div class="row">
+    	<div class="col-md-6">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Nye sendeplaner</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Oversikt tidligere sendinger</a></li>
+                         
+                            
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1default">
+                        <div class="form-group" ">
+							<label>Startdato</label><br>
+							<input type="date"  name="start-date" id="start-date" />
+						</div>
+						 <div class="form-group" ">
+							<label>Sluttdato</label><br>
+							<input type="date"  name="slutt-date" id="slutt-date" />
+						</div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                       Oversikt tidligere sendinger
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
+</form>
+</div> <!--slutt container-->
+</body>
+</html>
