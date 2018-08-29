@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -160,6 +161,7 @@ public class RapporterRadioStartServerResourceHTML extends RadioSessionServer {
 	    translist.setFilePath("c:\\ullern\\acem\\radio\\translist.txt");
 	    translist.createLines();
 	    Stream lines = translist.getLines();
+	    List sendeListe = translist.sendeListe();
 	    String firstLine = "tom";
 /*	    try {
 			firstLine = translist.readlines((BufferedReader r) -> r.readLine());
@@ -194,6 +196,7 @@ public class RapporterRadioStartServerResourceHTML extends RadioSessionServer {
     	Parameter nyttPassord = form.getFirst("nyttpassord");
         String page = "../hemovigilans/melder_rapport.html"; 
         LocalDate sluttDato = null;
+        LocalDate startDato = (LocalDate) sessionAdmin.getSessionObject(request, startdatoDate);
         DateTimeFormatter endformatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
         for (Parameter entry : form) {
 			if (entry.getValue() != null && !(entry.getValue().equals(""))){
@@ -206,11 +209,16 @@ public class RapporterRadioStartServerResourceHTML extends RadioSessionServer {
 			}
 			
     	}
-		Parameter formValue = form.getFirst("datohendt"); // Bruker oppgir sluttdato
+		Parameter formValue = form.getFirst("datohendt"); // Bruker oppgir sluttdato 
+		sendeListe = translist.createNewLines(startDato, sluttDato, sendeListe);
+		lines = translist.getLines();
+		Stream newList = sendeListe.stream();
+		translist.writetoFile(newList);
 	     Reference reference = new Reference(getReference(),"..").getTargetRef();
 	     String meldingsText = " ";
 	     SimpleScalar simple = new SimpleScalar(meldingsText);
 	     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MMM.yyyy");
+//	     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
 	     String formDate = startDato.format(formatter);
 	     String formEndDate = sluttDato.format(formatter);
 //	     LocalDate formStartdate = LocalDate.parse(formDate);
