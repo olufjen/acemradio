@@ -16,9 +16,8 @@ import java.util.Map;
 
 import java.util.stream.Stream;
 
-import no.basis.felles.model.FileModel;
-import no.basis.felles.model.FileProcess.ReadFile;
-import no.basis.felles.server.resource.SessionServerResource;
+import no.radio.web.model.FileModel;
+
 
 import org.restlet.Request;
 import org.restlet.data.Form;
@@ -197,7 +196,7 @@ public class RapporterRadioStartServerResourceHTML extends RadioSessionServer {
         String page = "../hemovigilans/melder_rapport.html"; 
         LocalDate sluttDato = null;
         LocalDate startDato = (LocalDate) sessionAdmin.getSessionObject(request, startdatoDate);
-        DateTimeFormatter endformatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
+        DateTimeFormatter endformatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         for (Parameter entry : form) {
 			if (entry.getValue() != null && !(entry.getValue().equals(""))){
 					System.out.println(entry.getName() + "=" + entry.getValue());
@@ -214,6 +213,9 @@ public class RapporterRadioStartServerResourceHTML extends RadioSessionServer {
 		lines = translist.getLines();
 		Stream newList = sendeListe.stream();
 		translist.writetoFile(newList);
+		int size = sendeListe.size();
+		String endD = (String) sendeListe.get(size-1);
+		System.out.println("Sendeliste har "+size+" elementer Siste element "+endD);
 	     Reference reference = new Reference(getReference(),"..").getTargetRef();
 	     String meldingsText = " ";
 	     SimpleScalar simple = new SimpleScalar(meldingsText);

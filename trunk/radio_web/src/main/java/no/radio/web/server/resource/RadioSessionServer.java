@@ -3,7 +3,7 @@ package no.radio.web.server.resource;
 import java.time.LocalDate;
 import java.util.Date;
 
-import no.basis.felles.server.resource.SessionServerResource;
+
 
 public class RadioSessionServer extends SessionServerResource {
 
